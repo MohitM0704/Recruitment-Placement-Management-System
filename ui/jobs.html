@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Openings – RPMS</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="shell">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <div class="logo-icon">R</div>
+      <div class="sys-title">RECRUITMENT &amp; PLACEMENT MANAGEMENT SYSTEM<small>RPMS v2.0</small></div>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-avatar">AK</div>
+        <div>
+          <div class="user-name">Amit Kulkarni</div>
+          <div class="user-role">Recruiter</div>
+        </div>
+      </div>
+      <a href="login.html" class="logout-link">&#x2715; Logout</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="dashboard.html"><span class="nav-icon">&#127968;</span><span class="nav-text">Dashboard</span></a></li>
+          <li><a href="candidates.html"><span class="nav-icon">&#128100;</span><span class="nav-text">Candidates</span></a></li>
+          <li><a href="companies.html"><span class="nav-icon">&#127970;</span><span class="nav-text">Companies</span></a></li>
+          <li><a href="jobs.html" class="active"><span class="nav-icon">&#128188;</span><span class="nav-text">Jobs</span></a></li>
+          <li><a href="applications.html"><span class="nav-icon">&#128203;</span><span class="nav-text">Applications</span></a></li>
+          <li><a href="interviews.html"><span class="nav-icon">&#128172;</span><span class="nav-text">Interviews</span></a></li>
+          <li><a href="placement-process.html"><span class="nav-icon">&#127941;</span><span class="nav-text">Placement Process</span></a></li>
+          <li><a href="reports.html"><span class="nav-icon">&#128202;</span><span class="nav-text">Reports</span></a></li>
+          <hr class="sidebar-divider"/>
+          <li><a href="login.html"><span class="nav-icon">&#128275;</span><span class="nav-text">Logout</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="sep">/</span>
+        <span>Job Openings</span>
+      </div>
+
+      <div class="page-header">
+        <h1>&#128188; Job Requirements &amp; Eligibility</h1>
+        <div class="page-actions">
+          <a href="job-form.html" class="btn btn-primary btn-sm">+ Create Job Opening</a>
+        </div>
+      </div>
+
+      <!-- KPI METRICS -->
+      <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 20px;">
+        <div class="card kpi-card">
+          <div class="kpi-value">12</div>
+          <div class="kpi-label">Total Job Openings</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #16a34a;">11</div>
+          <div class="kpi-label">Open / Active Positions</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #dc2626;">1</div>
+          <div class="kpi-label">Closed Positions</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #2563eb;">84</div>
+          <div class="kpi-label">Total Vacancies</div>
+        </div>
+      </div>
+
+      <!-- JOBS TABLE -->
+      <div class="card">
+        <div class="card-header"><span class="card-title">Job Openings Master</span></div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Job Code</th>
+              <th>Position Title</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Vacancies</th>
+              <th>Package (LPA)</th>
+              <th>Min %</th>
+              <th>Passing Years</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>JOB-2026-001</strong></td>
+              <td>Associate Java Developer</td>
+              <td>TechNova Solutions</td>
+              <td>Pune</td>
+              <td>8</td>
+              <td>4.0 &ndash; 5.5</td>
+              <td>60%</td>
+              <td>2024&ndash;2026</td>
+              <td>2026-11-15</td>
+              <td><span class="badge badge-open">OPEN</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>JOB-2026-002</strong></td>
+              <td>Python Developer Trainee</td>
+              <td>BluePeak Systems</td>
+              <td>Bengaluru</td>
+              <td>10</td>
+              <td>4.2 &ndash; 6.0</td>
+              <td>65%</td>
+              <td>2024&ndash;2026</td>
+              <td>2026-11-20</td>
+              <td><span class="badge badge-open">OPEN</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>JOB-2026-003</strong></td>
+              <td>Junior Data Analyst</td>
+              <td>DataSphere Labs</td>
+              <td>Pune</td>
+              <td>6</td>
+              <td>4.0 &ndash; 5.0</td>
+              <td>60%</td>
+              <td>2024&ndash;2026</td>
+              <td>2026-11-18</td>
+              <td><span class="badge badge-open">OPEN</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>JOB-2026-004</strong></td>
+              <td>QA Engineer Trainee</td>
+              <td>QualityFirst Tech</td>
+              <td>Mumbai</td>
+              <td>7</td>
+              <td>3.8 &ndash; 5.0</td>
+              <td>55%</td>
+              <td>2024&ndash;2026</td>
+              <td>2026-11-22</td>
+              <td><span class="badge badge-open">OPEN</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>JOB-2026-005</strong></td>
+              <td>Graduate Software Engineer</td>
+              <td>CloudBridge India</td>
+              <td>Hyderabad</td>
+              <td>12</td>
+              <td>5.0 &ndash; 7.0</td>
+              <td>65%</td>
+              <td>2024&ndash;2026</td>
+              <td>2026-11-25</td>
+              <td><span class="badge badge-open">OPEN</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>JOB-2026-006</strong></td>
+              <td>Java Support Engineer</td>
+              <td>NexGen Infotech</td>
+              <td>Pune</td>
+              <td>5</td>
+              <td>3.6 &ndash; 4.8</td>
+              <td>55%</td>
+              <td>2023&ndash;2026</td>
+              <td>2026-10-31</td>
+              <td><span class="badge badge-open">OPEN</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>JOB-2026-007</strong></td>
+              <td>Software Engineer - Java</td>
+              <td>FinEdge Technologies</td>
+              <td>Mumbai</td>
+              <td>4</td>
+              <td>5.5 &ndash; 7.5</td>
+              <td>70%</td>
+              <td>2024&ndash;2026</td>
+              <td>2026-10-30</td>
+              <td><span class="badge badge-red">CLOSED</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>JOB-2026-008</strong></td>
+              <td>Data Analytics Intern</td>
+              <td>RetailIQ Labs</td>
+              <td>Chennai</td>
+              <td>10</td>
+              <td>2.4 &ndash; 3.0</td>
+              <td>60%</td>
+              <td>2024&ndash;2026</td>
+              <td>2026-11-30</td>
+              <td><span class="badge badge-open">OPEN</span></td>
+              <td>
+                <a href="job-form.html" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="applications.html" class="btn btn-secondary btn-sm">Applicants</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

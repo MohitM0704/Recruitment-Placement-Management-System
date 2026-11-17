@@ -1,0 +1,546 @@
+-- =========================================================
+-- RPMS Sample Data  (Enhanced - 30 candidates, full workflow)
+-- Run after rpms_schema.sql
+-- =========================================================
+USE recruitment_portal;
+
+-- -------------------------
+-- Optional master tables
+-- -------------------------
+INSERT INTO qualifications (qualification_name) VALUES ('BE');
+INSERT INTO qualifications (qualification_name) VALUES ('BTech');
+INSERT INTO qualifications (qualification_name) VALUES ('MCA');
+INSERT INTO qualifications (qualification_name) VALUES ('BCA');
+INSERT INTO qualifications (qualification_name) VALUES ('BSc Computer Science');
+INSERT INTO qualifications (qualification_name) VALUES ('MSc Computer Science');
+
+INSERT INTO locations (city_name,state_name,country_name) VALUES ('Pune','Maharashtra','India');
+INSERT INTO locations (city_name,state_name,country_name) VALUES ('Mumbai','Maharashtra','India');
+INSERT INTO locations (city_name,state_name,country_name) VALUES ('Nashik','Maharashtra','India');
+INSERT INTO locations (city_name,state_name,country_name) VALUES ('Bengaluru','Karnataka','India');
+INSERT INTO locations (city_name,state_name,country_name) VALUES ('Hyderabad','Telangana','India');
+INSERT INTO locations (city_name,state_name,country_name) VALUES ('Chennai','Tamil Nadu','India');
+
+-- -------------------------
+-- Roles
+-- -------------------------
+INSERT INTO roles (role_id,role_code,role_name) VALUES (1,'ADMIN','Administrator');
+INSERT INTO roles (role_id,role_code,role_name) VALUES (2,'RECRUITER','Recruiter');
+INSERT INTO roles (role_id,role_code,role_name) VALUES (3,'PLACEMENT_OFFICER','Placement Officer');
+
+-- -------------------------
+-- Users (hashes are demo placeholders only)
+-- -------------------------
+INSERT INTO users (user_id,username,password_hash,full_name,email,role_id,status) VALUES (1,'admin','$2y$10$DEMO_ADMIN_HASH_ONLY','System Admin','admin@example.com',1,'ACTIVE');
+INSERT INTO users (user_id,username,password_hash,full_name,email,role_id,status) VALUES (2,'amit.recruiter','$2y$10$DEMO_AMIT_HASH_ONLY','Amit Kulkarni','amit.recruiter@example.com',2,'ACTIVE');
+INSERT INTO users (user_id,username,password_hash,full_name,email,role_id,status) VALUES (3,'sneha.recruiter','$2y$10$DEMO_SNEHA_HASH_ONLY','Sneha Patil','sneha.recruiter@example.com',2,'ACTIVE');
+INSERT INTO users (user_id,username,password_hash,full_name,email,role_id,status) VALUES (4,'neha.placement','$2y$10$DEMO_NEHA_HASH_ONLY','Neha Deshmukh','neha.placement@example.com',3,'ACTIVE');
+INSERT INTO users (user_id,username,password_hash,full_name,email,role_id,status) VALUES (5,'rahul.placement','$2y$10$DEMO_RAHUL_HASH_ONLY','Rahul Joshi','rahul.placement@example.com',3,'ACTIVE');
+
+-- -------------------------
+-- Skills
+-- -------------------------
+INSERT INTO skills (skill_id,skill_name,category) VALUES (1,'Java','Programming');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (2,'Python','Programming');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (3,'SQL','Database');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (4,'HTML','Web');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (5,'CSS','Web');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (6,'JDBC','Database Connectivity');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (7,'MySQL','Database');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (8,'Manual Testing','Testing');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (9,'Selenium','Testing');
+INSERT INTO skills (skill_id,skill_name,category) VALUES (10,'Data Analytics','Analytics');
+
+-- =========================================================
+-- Candidates (30 total: original 20 + 10 new)
+-- =========================================================
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (1,'CAN-2026-0001','Rahul Patil','rahul.patil01@example.com','9000000001','2002-04-12','Male','BE','ABC College Pune','SPPU',2025,68.5,NULL,0,'Java','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (2,'CAN-2026-0002','Sneha More','sneha.more02@example.com','9000000002','2002-08-21','Female','BTech','Modern College','SPPU',2025,74.2,NULL,0,'Python','Pune','Bengaluru','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (3,'CAN-2026-0003','Amit Shinde','amit.shinde03@example.com','9000000003','2001-12-02','Male','MCA','MIT College','SPPU',2024,71.0,NULL,0,'Java','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (4,'CAN-2026-0004','Neha Jadhav','neha.jadhav04@example.com','9000000004','2002-06-13','Female','BE','DY Patil College','SPPU',2025,82.4,NULL,0,'Python','Pimpri','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (5,'CAN-2026-0005','Rohit Pawar','rohit.pawar05@example.com','9000000005','2002-03-03','Male','BTech','PCCOE','SPPU',2025,59.5,NULL,1,'Java','Pimpri','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (6,'CAN-2026-0006','Priya Desai','priya.desai06@example.com','9000000006','2001-09-17','Female','MCA','Fergusson College','SPPU',2024,76.1,NULL,0,'Python','Pune','Hyderabad','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (7,'CAN-2026-0007','Akash Kale','akash.kale07@example.com','9000000007','2002-10-11','Male','BE','Sinhgad College','SPPU',2025,64.8,NULL,0,'Testing','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (8,'CAN-2026-0008','Pooja Mali','pooja.mali08@example.com','9000000008','2002-02-24','Female','BCA','Indira College','SPPU',2025,72.6,NULL,0,'Data Analytics','Pune','Mumbai','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (9,'CAN-2026-0009','Sagar Chavan','sagar.chavan09@example.com','9000000009','2001-11-14','Male','BSc Computer Science','Nowrosjee Wadia College','SPPU',2024,66.3,NULL,0,'Python','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (10,'CAN-2026-0010','Komal Gaikwad','komal.gaikwad10@example.com','9000000010','2002-05-09','Female','BE','AISSMS','SPPU',2025,78.9,NULL,0,'Java','Pune','Bengaluru','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (11,'CAN-2026-0011','Vishal Khot','vishal.khot11@example.com','9000000011','2002-01-28','Male','BTech','VIT Pune','SPPU',2025,69.4,NULL,0,'Java','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (12,'CAN-2026-0012','Anjali Bhosale','anjali.bhosale12@example.com','9000000012','2002-07-30','Female','MCA','IMCC Pune','SPPU',2025,80.1,NULL,0,'Python','Pune','Hyderabad','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (13,'CAN-2026-0013','Kunal Wagh','kunal.wagh13@example.com','9000000013','2001-04-05','Male','BE','MET Nashik','SPPU',2024,62.7,NULL,0,'Testing','Nashik','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (14,'CAN-2026-0014','Rutuja Salunkhe','rutuja.salunkhe14@example.com','9000000014','2002-09-23','Female','BTech','PCCOE','SPPU',2025,85.0,NULL,0,'Data Analytics','Pimpri','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (15,'CAN-2026-0015','Nikhil Patil','nikhil.patil15@example.com','9000000015','2001-03-12','Male','MCA','DY Patil','SPPU',2024,73.3,NULL,0,'Java','Pune','Mumbai','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (16,'CAN-2026-0016','Shruti Joshi','shruti.joshi16@example.com','9000000016','2002-12-16','Female','BE','MIT WPU','MIT WPU',2025,67.9,NULL,0,'Python','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (17,'CAN-2026-0017','Omkar Mane','omkar.mane17@example.com','9000000017','2002-06-06','Male','BTech','Sinhgad College','SPPU',2025,61.2,NULL,1,'Java','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (18,'CAN-2026-0018','Sayali Patil','sayali.patil18@example.com','9000000018','2002-10-19','Female','BCA','Modern College','SPPU',2025,77.5,NULL,0,'Testing','Pune','Mumbai','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (19,'CAN-2026-0019','Aditya Jagtap','aditya.jagtap19@example.com','9000000019','2001-08-08','Male','BE','AISSMS','SPPU',2024,70.6,NULL,0,'Java','Pune','Bengaluru','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (20,'CAN-2026-0020','Mansi Kulkarni','mansi.kulkarni20@example.com','9000000020','2002-11-11','Female','MCA','IMCC Pune','SPPU',2025,83.2,NULL,0,'Python','Pune','Pune','ACTIVE','NOT_PLACED');
+
+-- New candidates 21-30
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (21,'CAN-2026-0021','Kiran Deshmukh','kiran.deshmukh21@example.com','9000000021','2002-03-15','Male','BE','Pune Institute of Tech','SPPU',2025,72.0,NULL,0,'Java','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (22,'CAN-2026-0022','Riya Sharma','riya.sharma22@example.com','9000000022','2002-07-22','Female','BTech','Symbiosis Institute','SPPU',2025,79.5,NULL,0,'Python','Pune','Bengaluru','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (23,'CAN-2026-0023','Tejas Nair','tejas.nair23@example.com','9000000023','2001-10-05','Male','MCA','Fergusson College','SPPU',2024,66.8,NULL,0,'Testing','Pune','Mumbai','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (24,'CAN-2026-0024','Poornima Rao','poornima.rao24@example.com','9000000024','2002-01-18','Female','BE','RIT Rajaramnagar','SPPU',2025,81.3,NULL,0,'Data Analytics','Kolhapur','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (25,'CAN-2026-0025','Siddhesh Kamble','siddhesh.kamble25@example.com','9000000025','2002-05-27','Male','BTech','COEP Pune','SPPU',2025,88.0,NULL,0,'Java','Pune','Hyderabad','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (26,'CAN-2026-0026','Aishwarya Ghosh','aishwarya.ghosh26@example.com','9000000026','2001-12-30','Female','MCA','JSPM College','SPPU',2024,74.6,NULL,0,'Python','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (27,'CAN-2026-0027','Shubham Thorat','shubham.thorat27@example.com','9000000027','2002-08-14','Male','BE','VIT Pune','SPPU',2025,63.4,NULL,0,'Testing','Pune','Pune','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (28,'CAN-2026-0028','Meghana Patil','meghana.patil28@example.com','9000000028','2002-04-02','Female','BCA','Indira College','SPPU',2025,76.9,NULL,0,'Data Analytics','Pune','Mumbai','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (29,'CAN-2026-0029','Gaurav Jadhav','gaurav.jadhav29@example.com','9000000029','2001-06-20','Male','BTech','PICT Pune','SPPU',2024,70.1,NULL,0,'Java','Pune','Bengaluru','ACTIVE','NOT_PLACED');
+INSERT INTO candidates (candidate_id,candidate_code,full_name,email,mobile,date_of_birth,gender,qualification,college,university,passing_year,percentage,cgpa,backlog_count,primary_technology,current_location,preferred_location,profile_status,placement_status) VALUES (30,'CAN-2026-0030','Neelam Singh','neelam.singh30@example.com','9000000030','2002-09-09','Female','BE','MIT College','SPPU',2025,78.2,NULL,0,'Python','Pune','Hyderabad','ACTIVE','NOT_PLACED');
+
+-- -------------------------
+-- Candidate skills (original 1-20)
+-- -------------------------
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (1,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (1,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (1,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (1,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (2,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (2,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (2,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (2,4,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (3,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (3,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (3,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (3,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (4,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (4,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (4,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (4,4,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (5,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (5,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (5,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (5,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (6,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (6,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (6,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (6,4,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (7,8,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (7,9,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (7,3,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (8,10,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (8,2,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (8,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (9,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (9,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (9,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (9,4,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (10,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (10,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (10,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (10,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (11,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (11,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (11,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (11,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (12,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (12,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (12,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (12,4,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (13,8,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (13,9,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (13,3,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (14,10,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (14,2,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (14,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (15,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (15,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (15,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (15,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (16,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (16,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (16,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (16,4,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (17,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (17,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (17,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (17,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (18,8,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (18,9,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (18,3,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (19,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (19,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (19,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (19,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (20,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (20,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (20,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (20,4,'BASIC',0.0,0);
+
+-- New candidates 21-30 skills
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (21,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (21,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (21,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (22,2,'ADVANCED',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (22,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (22,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (23,8,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (23,9,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (23,3,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (24,10,'ADVANCED',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (24,2,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (24,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (25,1,'ADVANCED',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (25,3,'ADVANCED',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (25,6,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (25,7,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (26,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (26,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (26,7,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (27,8,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (27,9,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (27,3,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (28,10,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (28,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (28,2,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (29,1,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (29,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (29,6,'BASIC',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (30,2,'INTERMEDIATE',0.0,1);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (30,3,'INTERMEDIATE',0.0,0);
+INSERT INTO candidate_skills (candidate_id,skill_id,proficiency_level,years_experience,is_primary) VALUES (30,4,'BASIC',0.0,0);
+
+-- -------------------------
+-- Companies (8 total)
+-- -------------------------
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (1,'COM-001','TechNova Solutions','IT Services','https://example.com/technova','Pune','MID_SIZE','Meera Shah','meera.hr@example.com','9100000001','ACTIVE');
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (2,'COM-002','BluePeak Systems','Software','https://example.com/bluepeak','Bengaluru','MNC','Rakesh Nair','rakesh.hr@example.com','9100000002','ACTIVE');
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (3,'COM-003','DataSphere Labs','Analytics','https://example.com/datasphere','Pune','STARTUP','Anita Rao','anita.hr@example.com','9100000003','ACTIVE');
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (4,'COM-004','QualityFirst Tech','Testing','https://example.com/qualityfirst','Mumbai','MID_SIZE','Kavita Mehta','kavita.hr@example.com','9100000004','ACTIVE');
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (5,'COM-005','CloudBridge India','Cloud & Software','https://example.com/cloudbridge','Hyderabad','MNC','Arun Das','arun.hr@example.com','9100000005','ACTIVE');
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (6,'COM-006','NexGen Infotech','IT Services','https://example.com/nexgen','Pune','CONSULTANCY','Priyanka Sen','priyanka.hr@example.com','9100000006','ACTIVE');
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (7,'COM-007','FinEdge Technologies','FinTech','https://example.com/finedge','Mumbai','MNC','Harish Jain','harish.hr@example.com','9100000007','ACTIVE');
+INSERT INTO companies (company_id,company_code,company_name,industry,website,location,company_type,hr_name,hr_email,hr_mobile,status) VALUES (8,'COM-008','RetailIQ Labs','Retail Analytics','https://example.com/retailiq','Chennai','STARTUP','Divya Krishnan','divya.hr@example.com','9100000008','ACTIVE');
+
+-- -------------------------
+-- Jobs (12 total)
+-- -------------------------
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (1,'JOB-2026-001',1,'Associate Java Developer','FULL_TIME','Pune',8,4.0,5.5,60,2024,2026,0,0,'BE/BTech/MCA','2026-10-01','2026-11-15','OPEN',2);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (2,'JOB-2026-002',2,'Python Developer Trainee','FULL_TIME','Bengaluru',10,4.2,6.0,65,2024,2026,0,0,'BE/BTech/MCA/BCA','2026-10-02','2026-11-20','OPEN',3);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (3,'JOB-2026-003',3,'Junior Data Analyst','FULL_TIME','Pune',6,4.0,5.0,60,2024,2026,0,0,'BE/BTech/BCA/BSc/MCA','2026-10-03','2026-11-18','OPEN',2);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (4,'JOB-2026-004',4,'QA Engineer Trainee','FULL_TIME','Mumbai',7,3.8,5.0,55,2024,2026,1,0,'Any Computer Graduate','2026-10-04','2026-11-22','OPEN',3);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (5,'JOB-2026-005',5,'Graduate Software Engineer','FULL_TIME','Hyderabad',12,5.0,7.0,65,2024,2026,0,0,'BE/BTech/MCA','2026-10-05','2026-11-25','OPEN',2);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (6,'JOB-2026-006',6,'Java Support Engineer','FULL_TIME','Pune',5,3.6,4.8,55,2023,2026,1,0,'BE/BTech/MCA/BCA','2026-09-15','2026-10-31','OPEN',3);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (7,'JOB-2026-007',7,'Software Engineer - Java','FULL_TIME','Mumbai',4,5.5,7.5,70,2024,2026,0,0,'BE/BTech/MCA','2026-09-20','2026-10-30','CLOSED',2);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (8,'JOB-2026-008',8,'Data Analytics Intern','INTERNSHIP','Chennai',10,2.4,3.0,60,2024,2026,0,0,'Any Graduate','2026-10-07','2026-11-30','OPEN',3);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (9,'JOB-2026-009',1,'SQL Developer Trainee','FULL_TIME','Pune',5,3.8,5.0,60,2024,2026,0,0,'BE/BTech/MCA/BCA','2026-10-08','2026-11-28','OPEN',2);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (10,'JOB-2026-010',4,'Automation Testing Trainee','FULL_TIME','Pune',5,4.0,5.2,60,2024,2026,0,0,'BE/BTech/MCA/BCA','2026-10-10','2026-11-29','OPEN',3);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (11,'JOB-2026-011',6,'Application Support Associate','FULL_TIME','Pune',6,3.5,4.5,55,2023,2026,1,0,'Any Computer Graduate','2026-10-11','2026-12-01','OPEN',2);
+INSERT INTO jobs (job_id,job_code,company_id,job_title,employment_type,location,openings,min_package_lpa,max_package_lpa,min_percentage,min_passing_year,max_passing_year,max_backlogs,experience_min_years,qualification_rule,posted_date,application_deadline,status,created_by) VALUES (12,'JOB-2026-012',3,'BI Analyst Trainee','FULL_TIME','Pune',4,4.5,5.8,65,2024,2026,0,0,'BE/BTech/BCA/BSc/MCA','2026-10-12','2026-12-05','OPEN',3);
+
+-- -------------------------
+-- Job skills
+-- -------------------------
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (1,1,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (1,3,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (1,6,'BASIC',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (2,2,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (2,3,'BASIC',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (2,7,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (3,10,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (3,3,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (3,2,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (4,8,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (4,3,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (5,1,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (5,2,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (5,3,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (6,1,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (6,3,'BASIC',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (7,1,'ADVANCED',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (7,3,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (7,6,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (8,10,'BASIC',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (8,3,'BASIC',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (9,3,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (9,7,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (10,8,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (10,9,'BASIC',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (10,3,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (11,3,'BASIC',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (11,1,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (11,2,'BASIC',0);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (12,10,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (12,3,'INTERMEDIATE',1);
+INSERT INTO job_skills (job_id,skill_id,minimum_level,mandatory_flag) VALUES (12,2,'BASIC',0);
+
+-- =========================================================
+-- Applications (original 40 + 10 new for new candidates)
+-- =========================================================
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (1,'APP-2026-0001',1,1,'2026-10-02 10:07:00','ELIGIBLE','Meets eligibility criteria','SHORTLISTED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (2,'APP-2026-0002',1,9,'2026-10-03 10:14:00','ELIGIBLE','Meets eligibility criteria','INTERVIEW_SCHEDULED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (3,'APP-2026-0003',2,2,'2026-10-04 10:21:00','ELIGIBLE','Meets eligibility criteria','INTERVIEWED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (4,'APP-2026-0004',2,3,'2026-10-05 10:28:00','ELIGIBLE','Meets eligibility criteria','SELECTED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (5,'APP-2026-0005',3,1,'2026-10-06 10:35:00','ELIGIBLE','Meets eligibility criteria','OFFERED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (6,'APP-2026-0006',3,6,'2026-10-07 10:42:00','NOT_ELIGIBLE','Minimum percentage/backlog criteria not met','REJECTED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (7,'APP-2026-0007',4,2,'2026-10-08 10:49:00','ELIGIBLE','Meets eligibility criteria','APPLIED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (8,'APP-2026-0008',4,5,'2026-10-09 10:56:00','ELIGIBLE','Meets eligibility criteria','ELIGIBILITY_VERIFIED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (9,'APP-2026-0009',5,1,'2026-10-10 10:03:00','ELIGIBLE','Meets eligibility criteria','SHORTLISTED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (10,'APP-2026-0010',5,11,'2026-10-11 10:10:00','ELIGIBLE','Meets eligibility criteria','INTERVIEW_SCHEDULED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (11,'APP-2026-0011',6,2,'2026-10-12 10:17:00','ELIGIBLE','Meets eligibility criteria','INTERVIEWED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (12,'APP-2026-0012',6,12,'2026-10-13 10:24:00','ELIGIBLE','Meets eligibility criteria','SELECTED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (13,'APP-2026-0013',7,4,'2026-10-14 10:31:00','ELIGIBLE','Meets eligibility criteria','OFFERED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (14,'APP-2026-0014',7,10,'2026-10-15 10:38:00','NOT_ELIGIBLE','Minimum percentage/backlog criteria not met','REJECTED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (15,'APP-2026-0015',8,3,'2026-10-16 10:45:00','ELIGIBLE','Meets eligibility criteria','APPLIED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (16,'APP-2026-0016',8,8,'2026-10-17 10:52:00','ELIGIBLE','Meets eligibility criteria','ELIGIBILITY_VERIFIED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (17,'APP-2026-0017',9,2,'2026-10-18 10:59:00','ELIGIBLE','Meets eligibility criteria','SHORTLISTED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (18,'APP-2026-0018',9,11,'2026-10-19 10:06:00','ELIGIBLE','Meets eligibility criteria','INTERVIEW_SCHEDULED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (19,'APP-2026-0019',10,1,'2026-10-20 10:13:00','ELIGIBLE','Meets eligibility criteria','INTERVIEWED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (20,'APP-2026-0020',10,7,'2026-10-21 10:20:00','ELIGIBLE','Meets eligibility criteria','SELECTED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (21,'APP-2026-0021',11,1,'2026-10-22 10:27:00','ELIGIBLE','Meets eligibility criteria','OFFERED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (22,'APP-2026-0022',11,9,'2026-10-23 10:34:00','NOT_ELIGIBLE','Minimum percentage/backlog criteria not met','REJECTED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (23,'APP-2026-0023',12,2,'2026-10-24 10:41:00','ELIGIBLE','Meets eligibility criteria','APPLIED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (24,'APP-2026-0024',12,5,'2026-10-25 10:48:00','ELIGIBLE','Meets eligibility criteria','ELIGIBILITY_VERIFIED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (25,'APP-2026-0025',13,4,'2026-10-26 10:55:00','ELIGIBLE','Meets eligibility criteria','SHORTLISTED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (26,'APP-2026-0026',13,10,'2026-10-27 10:02:00','ELIGIBLE','Meets eligibility criteria','INTERVIEW_SCHEDULED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (27,'APP-2026-0027',14,3,'2026-10-01 10:09:00','ELIGIBLE','Meets eligibility criteria','INTERVIEWED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (28,'APP-2026-0028',14,8,'2026-10-02 10:16:00','ELIGIBLE','Meets eligibility criteria','SELECTED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (29,'APP-2026-0029',15,1,'2026-10-03 10:23:00','ELIGIBLE','Meets eligibility criteria','OFFERED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (30,'APP-2026-0030',15,7,'2026-10-04 10:30:00','NOT_ELIGIBLE','Minimum percentage/backlog criteria not met','REJECTED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (31,'APP-2026-0031',16,2,'2026-10-05 10:37:00','ELIGIBLE','Meets eligibility criteria','APPLIED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (32,'APP-2026-0032',16,12,'2026-10-06 10:44:00','ELIGIBLE','Meets eligibility criteria','ELIGIBILITY_VERIFIED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (33,'APP-2026-0033',17,6,'2026-10-07 10:51:00','ELIGIBLE','Meets eligibility criteria','SHORTLISTED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (34,'APP-2026-0034',17,11,'2026-10-08 10:58:00','ELIGIBLE','Meets eligibility criteria','INTERVIEW_SCHEDULED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (35,'APP-2026-0035',18,4,'2026-10-09 10:05:00','ELIGIBLE','Meets eligibility criteria','INTERVIEWED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (36,'APP-2026-0036',18,10,'2026-10-10 10:12:00','ELIGIBLE','Meets eligibility criteria','SELECTED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (37,'APP-2026-0037',19,1,'2026-10-11 10:19:00','ELIGIBLE','Meets eligibility criteria','OFFERED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (38,'APP-2026-0038',19,5,'2026-10-12 10:26:00','NOT_ELIGIBLE','Minimum percentage/backlog criteria not met','REJECTED','Recruiter',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (39,'APP-2026-0039',20,2,'2026-10-13 10:33:00','ELIGIBLE','Meets eligibility criteria','APPLIED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (40,'APP-2026-0040',20,12,'2026-10-14 10:40:00','ELIGIBLE','Meets eligibility criteria','ELIGIBILITY_VERIFIED','Portal',3);
+
+-- New applications for candidates 21-30
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (41,'APP-2026-0041',21,1,'2026-10-15 10:00:00','ELIGIBLE','Meets eligibility criteria','INTERVIEW_SCHEDULED','Portal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (42,'APP-2026-0042',22,2,'2026-10-16 10:00:00','ELIGIBLE','Meets eligibility criteria','INTERVIEWED','Referral',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (43,'APP-2026-0043',23,4,'2026-10-17 10:00:00','ELIGIBLE','Meets eligibility criteria','SELECTED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (44,'APP-2026-0044',24,3,'2026-10-18 10:00:00','ELIGIBLE','Meets eligibility criteria','OFFERED','Portal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (45,'APP-2026-0045',25,5,'2026-10-19 10:00:00','ELIGIBLE','Meets eligibility criteria','JOINED','Referral',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (46,'APP-2026-0046',26,2,'2026-10-20 10:00:00','ELIGIBLE','Meets eligibility criteria','SHORTLISTED','Internal',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (47,'APP-2026-0047',27,4,'2026-10-21 10:00:00','ELIGIBLE','Meets eligibility criteria','APPLIED','Portal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (48,'APP-2026-0048',28,8,'2026-10-22 10:00:00','ELIGIBLE','Meets eligibility criteria','INTERVIEW_SCHEDULED','Referral',3);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (49,'APP-2026-0049',29,1,'2026-10-23 10:00:00','ELIGIBLE','Meets eligibility criteria','INTERVIEWED','Internal',2);
+INSERT INTO applications (application_id,application_code,candidate_id,job_id,applied_at,eligibility_status,eligibility_reason,application_status,source,assigned_recruiter_id) VALUES (50,'APP-2026-0050',30,2,'2026-10-24 10:00:00','ELIGIBLE','Meets eligibility criteria','SELECTED','Portal',3);
+
+-- =========================================================
+-- Application history
+-- =========================================================
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (1,NULL,'APPLIED','Application created',2,'2026-10-02 10:07:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (1,'APPLIED','SHORTLISTED','Candidate shortlisted for round 1',2,DATE_ADD('2026-10-02 10:07:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (2,NULL,'APPLIED','Application created',3,'2026-10-03 10:14:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (2,'APPLIED','INTERVIEW_SCHEDULED','Interview scheduled',3,DATE_ADD('2026-10-03 10:14:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (3,NULL,'APPLIED','Application created',2,'2026-10-04 10:21:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (3,'APPLIED','INTERVIEWED','Interview completed',2,DATE_ADD('2026-10-04 10:21:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (4,NULL,'APPLIED','Application created',3,'2026-10-05 10:28:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (4,'APPLIED','SELECTED','Candidate selected',3,DATE_ADD('2026-10-05 10:28:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (5,NULL,'APPLIED','Application created',2,'2026-10-06 10:35:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (5,'APPLIED','OFFERED','Offer extended',2,DATE_ADD('2026-10-06 10:35:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (6,NULL,'APPLIED','Application created',3,'2026-10-07 10:42:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (6,'APPLIED','REJECTED','Not eligible - percentage below threshold',3,DATE_ADD('2026-10-07 10:42:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (7,NULL,'APPLIED','Application created',2,'2026-10-08 10:49:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (8,NULL,'APPLIED','Application created',3,'2026-10-09 10:56:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (8,'APPLIED','ELIGIBILITY_VERIFIED','Eligibility verified',3,DATE_ADD('2026-10-09 10:56:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (9,NULL,'APPLIED','Application created',2,'2026-10-10 10:03:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (9,'APPLIED','SHORTLISTED','Candidate shortlisted',2,DATE_ADD('2026-10-10 10:03:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (10,NULL,'APPLIED','Application created',3,'2026-10-11 10:10:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (10,'APPLIED','INTERVIEW_SCHEDULED','Interview scheduled',3,DATE_ADD('2026-10-11 10:10:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (11,NULL,'APPLIED','Application created',2,'2026-10-12 10:17:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (11,'APPLIED','INTERVIEWED','Interview completed',2,DATE_ADD('2026-10-12 10:17:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (12,NULL,'APPLIED','Application created',3,'2026-10-13 10:24:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (12,'APPLIED','SELECTED','Candidate selected',3,DATE_ADD('2026-10-13 10:24:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (13,NULL,'APPLIED','Application created',2,'2026-10-14 10:31:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (13,'APPLIED','OFFERED','Offer extended',2,DATE_ADD('2026-10-14 10:31:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (14,NULL,'APPLIED','Application created',3,'2026-10-15 10:38:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (14,'APPLIED','REJECTED','Not eligible',3,DATE_ADD('2026-10-15 10:38:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (15,NULL,'APPLIED','Application created',2,'2026-10-16 10:45:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (16,NULL,'APPLIED','Application created',3,'2026-10-17 10:52:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (16,'APPLIED','ELIGIBILITY_VERIFIED','Eligibility verified',3,DATE_ADD('2026-10-17 10:52:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (17,NULL,'APPLIED','Application created',2,'2026-10-18 10:59:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (17,'APPLIED','SHORTLISTED','Candidate shortlisted',2,DATE_ADD('2026-10-18 10:59:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (18,NULL,'APPLIED','Application created',3,'2026-10-19 10:06:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (18,'APPLIED','INTERVIEW_SCHEDULED','Interview scheduled',3,DATE_ADD('2026-10-19 10:06:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (19,NULL,'APPLIED','Application created',2,'2026-10-20 10:13:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (19,'APPLIED','INTERVIEWED','Interview completed',2,DATE_ADD('2026-10-20 10:13:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (20,NULL,'APPLIED','Application created',3,'2026-10-21 10:20:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (20,'APPLIED','SELECTED','Candidate selected',3,DATE_ADD('2026-10-21 10:20:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (21,NULL,'APPLIED','Application created',2,'2026-10-22 10:27:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (21,'APPLIED','OFFERED','Offer extended',2,DATE_ADD('2026-10-22 10:27:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (22,NULL,'APPLIED','Application created',3,'2026-10-23 10:34:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (22,'APPLIED','REJECTED','Not eligible',3,DATE_ADD('2026-10-23 10:34:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (23,NULL,'APPLIED','Application created',2,'2026-10-24 10:41:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (24,NULL,'APPLIED','Application created',3,'2026-10-25 10:48:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (24,'APPLIED','ELIGIBILITY_VERIFIED','Eligibility verified',3,DATE_ADD('2026-10-25 10:48:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (25,NULL,'APPLIED','Application created',2,'2026-10-26 10:55:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (25,'APPLIED','SHORTLISTED','Candidate shortlisted',2,DATE_ADD('2026-10-26 10:55:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (26,NULL,'APPLIED','Application created',3,'2026-10-27 10:02:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (26,'APPLIED','INTERVIEW_SCHEDULED','Interview scheduled',3,DATE_ADD('2026-10-27 10:02:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (27,NULL,'APPLIED','Application created',2,'2026-10-01 10:09:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (27,'APPLIED','INTERVIEWED','Interview completed',2,DATE_ADD('2026-10-01 10:09:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (28,NULL,'APPLIED','Application created',3,'2026-10-02 10:16:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (28,'APPLIED','SELECTED','Candidate selected',3,DATE_ADD('2026-10-02 10:16:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (29,NULL,'APPLIED','Application created',2,'2026-10-03 10:23:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (29,'APPLIED','OFFERED','Offer extended',2,DATE_ADD('2026-10-03 10:23:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (30,NULL,'APPLIED','Application created',3,'2026-10-04 10:30:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (30,'APPLIED','REJECTED','Not eligible',3,DATE_ADD('2026-10-04 10:30:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (31,NULL,'APPLIED','Application created',2,'2026-10-05 10:37:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (32,NULL,'APPLIED','Application created',3,'2026-10-06 10:44:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (32,'APPLIED','ELIGIBILITY_VERIFIED','Eligibility verified',3,DATE_ADD('2026-10-06 10:44:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (33,NULL,'APPLIED','Application created',2,'2026-10-07 10:51:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (33,'APPLIED','SHORTLISTED','Candidate shortlisted',2,DATE_ADD('2026-10-07 10:51:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (34,NULL,'APPLIED','Application created',3,'2026-10-08 10:58:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (34,'APPLIED','INTERVIEW_SCHEDULED','Interview scheduled',3,DATE_ADD('2026-10-08 10:58:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (35,NULL,'APPLIED','Application created',2,'2026-10-09 10:05:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (35,'APPLIED','INTERVIEWED','Interview completed',2,DATE_ADD('2026-10-09 10:05:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (36,NULL,'APPLIED','Application created',3,'2026-10-10 10:12:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (36,'APPLIED','SELECTED','Candidate selected',3,DATE_ADD('2026-10-10 10:12:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (37,NULL,'APPLIED','Application created',2,'2026-10-11 10:19:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (37,'APPLIED','OFFERED','Offer extended',2,DATE_ADD('2026-10-11 10:19:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (38,NULL,'APPLIED','Application created',3,'2026-10-12 10:26:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (38,'APPLIED','REJECTED','Not eligible',3,DATE_ADD('2026-10-12 10:26:00', INTERVAL 1 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (39,NULL,'APPLIED','Application created',2,'2026-10-13 10:33:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (40,NULL,'APPLIED','Application created',3,'2026-10-14 10:40:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (40,'APPLIED','ELIGIBILITY_VERIFIED','Eligibility verified',3,DATE_ADD('2026-10-14 10:40:00', INTERVAL 1 DAY));
+-- New app history (41-50)
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (41,NULL,'APPLIED','Application created',2,'2026-10-15 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (41,'APPLIED','INTERVIEW_SCHEDULED','Interview scheduled',2,DATE_ADD('2026-10-15 10:00:00', INTERVAL 2 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (42,NULL,'APPLIED','Application created',3,'2026-10-16 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (42,'APPLIED','INTERVIEWED','Interview completed',3,DATE_ADD('2026-10-16 10:00:00', INTERVAL 2 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (43,NULL,'APPLIED','Application created',2,'2026-10-17 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (43,'APPLIED','SELECTED','Candidate selected',2,DATE_ADD('2026-10-17 10:00:00', INTERVAL 2 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (44,NULL,'APPLIED','Application created',3,'2026-10-18 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (44,'APPLIED','OFFERED','Offer extended',3,DATE_ADD('2026-10-18 10:00:00', INTERVAL 2 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (45,NULL,'APPLIED','Application created',2,'2026-10-19 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (45,'APPLIED','JOINED','Candidate joined',2,DATE_ADD('2026-10-19 10:00:00', INTERVAL 30 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (46,NULL,'APPLIED','Application created',3,'2026-10-20 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (46,'APPLIED','SHORTLISTED','Candidate shortlisted',3,DATE_ADD('2026-10-20 10:00:00', INTERVAL 2 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (47,NULL,'APPLIED','Application created',2,'2026-10-21 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (48,NULL,'APPLIED','Application created',3,'2026-10-22 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (48,'APPLIED','INTERVIEW_SCHEDULED','Interview scheduled',3,DATE_ADD('2026-10-22 10:00:00', INTERVAL 2 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (49,NULL,'APPLIED','Application created',2,'2026-10-23 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (49,'APPLIED','INTERVIEWED','Interview completed',2,DATE_ADD('2026-10-23 10:00:00', INTERVAL 2 DAY));
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (50,NULL,'APPLIED','Application created',3,'2026-10-24 10:00:00');
+INSERT INTO application_history (application_id,old_status,new_status,remarks,changed_by,changed_at) VALUES (50,'APPLIED','SELECTED','Candidate selected',3,DATE_ADD('2026-10-24 10:00:00', INTERVAL 2 DAY));
+
+-- =========================================================
+-- Interview rounds (20 original + 5 new, covering all statuses)
+-- =========================================================
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (1,2,1,'TECHNICAL','2026-11-03','11:00:00','ONLINE','Ravi Kumar','https://meet.example.com/rpms-2','SCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (2,3,1,'TECHNICAL','2026-11-04','11:00:00','ONLINE','Interviewer 3','https://meet.example.com/rpms-3','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (3,4,1,'TECHNICAL','2026-11-05','11:00:00','ONLINE','Interviewer 4','https://meet.example.com/rpms-4','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (4,5,1,'TECHNICAL','2026-11-06','11:00:00','ONLINE','Interviewer 5','https://meet.example.com/rpms-5','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (5,10,1,'TECHNICAL','2026-11-11','11:00:00','ONLINE','Interviewer 5','https://meet.example.com/rpms-10','SCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (6,11,1,'TECHNICAL','2026-11-12','11:00:00','ONLINE','Interviewer 1','https://meet.example.com/rpms-11','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (7,12,1,'TECHNICAL','2026-11-13','11:00:00','ONLINE','Interviewer 2','https://meet.example.com/rpms-12','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (8,13,1,'TECHNICAL','2026-11-14','11:00:00','ONLINE','Interviewer 3','https://meet.example.com/rpms-13','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (9,18,1,'TECHNICAL','2026-11-19','11:00:00','ONLINE','Interviewer 3','https://meet.example.com/rpms-18','SCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (10,19,1,'TECHNICAL','2026-11-20','11:00:00','ONLINE','Interviewer 4','https://meet.example.com/rpms-19','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (11,20,1,'TECHNICAL','2026-11-01','11:00:00','ONLINE','Interviewer 5','https://meet.example.com/rpms-20','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (12,21,1,'TECHNICAL','2026-11-02','11:00:00','ONLINE','Interviewer 1','https://meet.example.com/rpms-21','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (13,26,1,'TECHNICAL','2026-11-07','11:00:00','ONLINE','Interviewer 1','https://meet.example.com/rpms-26','SCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (14,27,1,'TECHNICAL','2026-11-08','11:00:00','ONLINE','Interviewer 2','https://meet.example.com/rpms-27','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (15,28,1,'TECHNICAL','2026-11-09','11:00:00','ONLINE','Interviewer 3','https://meet.example.com/rpms-28','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (16,29,1,'TECHNICAL','2026-11-10','11:00:00','ONLINE','Interviewer 4','https://meet.example.com/rpms-29','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (17,34,1,'TECHNICAL','2026-11-15','11:00:00','ONLINE','Interviewer 4','https://meet.example.com/rpms-34','SCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (18,35,1,'TECHNICAL','2026-11-16','11:00:00','ONLINE','Interviewer 5','https://meet.example.com/rpms-35','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (19,36,1,'TECHNICAL','2026-11-17','11:00:00','ONLINE','Interviewer 1','https://meet.example.com/rpms-36','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (20,37,1,'TECHNICAL','2026-11-18','11:00:00','ONLINE','Interviewer 2','https://meet.example.com/rpms-37','COMPLETED');
+-- Additional rounds covering RESCHEDULED, NO_SHOW, CANCELLED
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (21,41,1,'APTITUDE','2026-11-21','10:00:00','ONLINE','Suresh Rajan','https://meet.example.com/rpms-41','SCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (22,42,1,'TECHNICAL','2026-11-22','10:00:00','OFFLINE','Priya Nair','Conference Room A','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (23,43,1,'MANAGERIAL','2026-11-23','14:00:00','TELEPHONIC','Arun Mehta','+91-9900000001','RESCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (24,48,1,'TECHNICAL','2026-11-24','11:00:00','ONLINE','Deepak Rao','https://meet.example.com/rpms-48','NO_SHOW');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (25,49,1,'HR','2026-11-25','15:00:00','ONLINE','Meera Shah','https://meet.example.com/rpms-49','COMPLETED');
+
+-- Second rounds for selected completed interviews
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (26,4,2,'HR','2026-11-07','14:00:00','ONLINE','HR Manager','https://meet.example.com/rpms-hr-4','CANCELLED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (27,42,2,'HR','2026-11-28','11:00:00','ONLINE','Meena Kumar','https://meet.example.com/rpms-hr-42','SCHEDULED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (28,45,1,'TECHNICAL','2026-11-01','10:00:00','OFFLINE','Tech Lead','Building 2, Lab 3','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (29,45,2,'HR','2026-11-10','11:00:00','ONLINE','HR Head','https://meet.example.com/rpms-hr-45','COMPLETED');
+INSERT INTO interview_rounds (interview_id,application_id,round_number,round_type,scheduled_date,scheduled_time,mode,interviewer_name,meeting_or_location,status) VALUES (30,50,1,'TECHNICAL','2026-11-26','10:30:00','ONLINE','Interviewer 6','https://meet.example.com/rpms-50','SCHEDULED');
+
+-- =========================================================
+-- Interview feedback (15 original + 5 new covering all recommendations)
+-- =========================================================
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (1,2,4.0,3.5,4.0,3.8,'NEXT_ROUND','Good fundamentals; continue to next stage.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (2,3,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',3);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (3,4,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (4,6,4.0,3.5,4.0,3.8,'NEXT_ROUND','Good fundamentals; continue to next stage.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (5,7,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',3);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (6,8,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (7,10,4.0,3.5,4.0,3.8,'NEXT_ROUND','Good fundamentals; continue to next stage.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (8,11,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',3);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (9,12,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (10,14,4.0,3.5,4.0,3.8,'NEXT_ROUND','Good fundamentals; continue to next stage.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (11,15,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',3);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (12,16,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (13,18,4.0,3.5,4.0,3.8,'NEXT_ROUND','Good fundamentals; continue to next stage.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (14,19,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',3);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (15,20,4.0,3.5,4.0,3.8,'SELECTED','Recommended for selection.',2);
+-- New feedback covering REJECTED, ON_HOLD
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (16,22,3.5,4.0,3.5,3.7,'NEXT_ROUND','Strong communication, cleared technical round.',3);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (17,25,2.5,3.0,2.5,2.7,'REJECTED','Did not meet technical expectations.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (18,28,4.5,4.0,4.5,4.3,'SELECTED','Excellent candidate, strong performer.',3);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (19,29,4.5,4.5,4.5,4.5,'SELECTED','Outstanding performance across all parameters.',2);
+INSERT INTO interview_feedback (feedback_id,interview_id,technical_rating,communication_rating,problem_solving_rating,overall_rating,recommendation,remarks,submitted_by) VALUES (20,10,3.0,3.5,3.0,3.2,'ON_HOLD','Decent performance; keeping on hold pending other candidates.',3);
+
+-- =========================================================
+-- Offers (8+: OFFERED, ACCEPTED, REJECTED, EXPIRED)
+-- =========================================================
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (1,'OFF-2026-001',5,'Associate Java Developer',4.3,'2026-11-11','2026-12-02','ACCEPTED','Offer accepted');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (2,'OFF-2026-002',13,'QA Engineer Trainee',4.1,'2026-11-12','2026-12-03','ACCEPTED','Offer accepted');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (3,'OFF-2026-003',21,'Associate Java Developer',4.3,'2026-11-13','2026-12-04','ACCEPTED','Offer accepted');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (4,'OFF-2026-004',29,'Associate Java Developer',4.3,'2026-11-14','2026-12-05','OFFERED','Offer pending response');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (5,'OFF-2026-005',4,'Junior Data Analyst',4.3,'2026-11-15','2026-12-06','ACCEPTED','Offer accepted');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (6,'OFF-2026-006',12,'BI Analyst Trainee',4.8,'2026-11-16','2026-12-07','OFFERED','Offer pending response');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (7,'OFF-2026-007',37,'Associate Java Developer',4.5,'2026-11-10','2026-12-01','REJECTED','Candidate rejected the offer - accepted competing offer');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (8,'OFF-2026-008',44,'Junior Data Analyst',4.2,'2026-10-28','2026-11-25','EXPIRED','Candidate did not respond before deadline');
+INSERT INTO offers (offer_id,offer_code,application_id,designation,offered_package_lpa,offer_date,expected_joining_date,offer_status,remarks) VALUES (9,'OFF-2026-009',45,'Graduate Software Engineer',5.5,'2026-11-05','2026-11-20','ACCEPTED','Offer accepted');
+
+-- =========================================================
+-- Placements (5+: JOINED, NOT_JOINED, PENDING)
+-- =========================================================
+INSERT INTO placements (placement_id,candidate_id,company_id,job_id,offer_id,designation,final_package_lpa,expected_joining_date,actual_joining_date,joining_status,placement_status) VALUES (1,3,1,1,1,'Associate Java Developer',4.3,'2026-12-02','2026-12-02','JOINED','ACTIVE');
+INSERT INTO placements (placement_id,candidate_id,company_id,job_id,offer_id,designation,final_package_lpa,expected_joining_date,actual_joining_date,joining_status,placement_status) VALUES (2,7,4,4,2,'QA Engineer Trainee',4.1,'2026-12-03','2026-12-03','JOINED','ACTIVE');
+INSERT INTO placements (placement_id,candidate_id,company_id,job_id,offer_id,designation,final_package_lpa,expected_joining_date,actual_joining_date,joining_status,placement_status) VALUES (3,11,1,1,3,'Associate Java Developer',4.3,'2026-12-04','2026-12-04','JOINED','ACTIVE');
+INSERT INTO placements (placement_id,candidate_id,company_id,job_id,offer_id,designation,final_package_lpa,expected_joining_date,actual_joining_date,joining_status,placement_status) VALUES (4,2,3,3,5,'Junior Data Analyst',4.3,'2026-12-06',NULL,'NOT_JOINED','ACTIVE');
+INSERT INTO placements (placement_id,candidate_id,company_id,job_id,offer_id,designation,final_package_lpa,expected_joining_date,actual_joining_date,joining_status,placement_status) VALUES (5,15,1,1,4,'Associate Java Developer',4.3,'2026-12-05',NULL,'PENDING','ACTIVE');
+INSERT INTO placements (placement_id,candidate_id,company_id,job_id,offer_id,designation,final_package_lpa,expected_joining_date,actual_joining_date,joining_status,placement_status) VALUES (6,25,5,5,9,'Graduate Software Engineer',5.5,'2026-11-20','2026-11-20','JOINED','ACTIVE');
+
+-- Mark candidates as PLACED
+UPDATE candidates SET placement_status='PLACED' WHERE candidate_id IN (3,7,11,25);
+
+-- =========================================================
+-- Activity logs
+-- =========================================================
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (1,'USER','LOGIN','1','Admin logged in');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (2,'JOB','CREATE','JOB-2026-001','Created Java Associate Developer job posting');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (3,'APPLICATION','SHORTLIST','APP-2026-0001','Rahul Patil shortlisted for JOB-2026-001');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (4,'OFFER','CREATE','OFF-2026-001','Offer created for Amit Shinde at TechNova');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (5,'PLACEMENT','JOINING','1','Amit Shinde marked as joined at TechNova Solutions');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (2,'CANDIDATE','CREATE','CAN-2026-0021','New candidate Kiran Deshmukh registered');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (3,'CANDIDATE','CREATE','CAN-2026-0022','New candidate Riya Sharma registered');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (2,'INTERVIEW','SCHEDULE','21','Interview scheduled for Kiran Deshmukh - Aptitude Round');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (3,'INTERVIEW','SCHEDULE','22','Interview scheduled for Riya Sharma - Technical Round');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (4,'OFFER','CREATE','OFF-2026-007','Offer created for Aditya Jagtap at TechNova');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (5,'OFFER','REJECT','OFF-2026-007','Aditya Jagtap rejected the offer');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (2,'PLACEMENT','JOINING','6','Siddhesh Kamble marked as joined at CloudBridge India');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (1,'JOB','CLOSE','JOB-2026-007','Job JOB-2026-007 closed after deadline');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (3,'APPLICATION','REJECT','APP-2026-0038','Aditya Jagtap not eligible for JOB-2026-005');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (4,'CANDIDATE','UPDATE','CAN-2026-0003','Amit Shinde placement status updated to PLACED');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (5,'CANDIDATE','UPDATE','CAN-2026-0007','Akash Kale placement status updated to PLACED');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (2,'CANDIDATE','UPDATE','CAN-2026-0011','Vishal Khot placement status updated to PLACED');
+INSERT INTO activity_logs (user_id,module_name,action_name,record_id,description) VALUES (3,'CANDIDATE','UPDATE','CAN-2026-0025','Siddhesh Kamble placement status updated to PLACED');
+
+-- =========================================================
+-- Verification queries
+-- =========================================================
+SELECT COUNT(*) AS total_candidates FROM candidates;
+SELECT COUNT(*) AS total_companies FROM companies;
+SELECT COUNT(*) AS total_jobs FROM jobs;
+SELECT COUNT(*) AS total_applications FROM applications;
+SELECT COUNT(*) AS total_interview_rounds FROM interview_rounds;
+SELECT COUNT(*) AS total_interview_feedback FROM interview_feedback;
+SELECT COUNT(*) AS total_offers FROM offers;
+SELECT COUNT(*) AS total_placements FROM placements;
+SELECT primary_technology, COUNT(*) AS cnt FROM candidates GROUP BY primary_technology ORDER BY cnt DESC;
+SELECT placement_status, COUNT(*) AS cnt FROM candidates GROUP BY placement_status;
+-- =========================================================
+-- End of sample data
+-- =========================================================

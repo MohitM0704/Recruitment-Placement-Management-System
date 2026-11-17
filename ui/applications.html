@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Applications Pipeline – RPMS</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="shell">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <div class="logo-icon">R</div>
+      <div class="sys-title">RECRUITMENT &amp; PLACEMENT MANAGEMENT SYSTEM<small>RPMS v2.0</small></div>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-avatar">AK</div>
+        <div>
+          <div class="user-name">Amit Kulkarni</div>
+          <div class="user-role">Recruiter</div>
+        </div>
+      </div>
+      <a href="login.html" class="logout-link">&#x2715; Logout</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="dashboard.html"><span class="nav-icon">&#127968;</span><span class="nav-text">Dashboard</span></a></li>
+          <li><a href="candidates.html"><span class="nav-icon">&#128100;</span><span class="nav-text">Candidates</span></a></li>
+          <li><a href="companies.html"><span class="nav-icon">&#127970;</span><span class="nav-text">Companies</span></a></li>
+          <li><a href="jobs.html"><span class="nav-icon">&#128188;</span><span class="nav-text">Jobs</span></a></li>
+          <li><a href="applications.html" class="active"><span class="nav-icon">&#128203;</span><span class="nav-text">Applications</span></a></li>
+          <li><a href="interviews.html"><span class="nav-icon">&#128172;</span><span class="nav-text">Interviews</span></a></li>
+          <li><a href="placement-process.html"><span class="nav-icon">&#127941;</span><span class="nav-text">Placement Process</span></a></li>
+          <li><a href="reports.html"><span class="nav-icon">&#128202;</span><span class="nav-text">Reports</span></a></li>
+          <hr class="sidebar-divider"/>
+          <li><a href="login.html"><span class="nav-icon">&#128275;</span><span class="nav-text">Logout</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="sep">/</span>
+        <span>Applications</span>
+      </div>
+
+      <div class="page-header">
+        <h1>&#128203; Application Tracking &amp; Pipeline</h1>
+      </div>
+
+      <!-- PIPELINE FUNNEL -->
+      <div class="kpi-grid" style="grid-template-columns: repeat(6, 1fr); margin-bottom: 20px;">
+        <div class="card kpi-card">
+          <div class="kpi-value">39</div>
+          <div class="kpi-label">Applied</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #2563eb;">12</div>
+          <div class="kpi-label">Shortlisted</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #8b5cf6;">8</div>
+          <div class="kpi-label">Interviewed</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #059669;">6</div>
+          <div class="kpi-label">Selected</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #d97706;">5</div>
+          <div class="kpi-label">Offered</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-value" style="color: #15803d;">3</div>
+          <div class="kpi-label">Joined (Placed)</div>
+        </div>
+      </div>
+
+      <!-- APPLICATIONS TABLE -->
+      <div class="card">
+        <div class="card-header"><span class="card-title">Candidate Applications Pipeline</span></div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>App Code</th>
+              <th>Candidate</th>
+              <th>Job Title</th>
+              <th>Company</th>
+              <th>Applied Date</th>
+              <th>Eligibility</th>
+              <th>Current Stage</th>
+              <th>Workflow Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>APP-2026-0001</strong></td>
+              <td><a href="candidate-details.html" style="font-weight:bold; color:#1d4ed8;">Rahul Patil</a></td>
+              <td>Associate Java Developer</td>
+              <td>TechNova Solutions</td>
+              <td>2026-10-02</td>
+              <td><span class="badge badge-active">ELIGIBLE</span></td>
+              <td><span class="badge badge-blue">SHORTLISTED</span></td>
+              <td>
+                <a href="interviews.html" class="btn btn-primary btn-sm">Schedule Interview</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>APP-2026-0002</strong></td>
+              <td><a href="candidate-details.html" style="font-weight:bold; color:#1d4ed8;">Rahul Patil</a></td>
+              <td>SQL Developer Trainee</td>
+              <td>TechNova Solutions</td>
+              <td>2026-10-03</td>
+              <td><span class="badge badge-active">ELIGIBLE</span></td>
+              <td><span class="badge badge-blue">INTERVIEW_SCHEDULED</span></td>
+              <td>
+                <a href="placement-process.html" class="btn btn-secondary btn-sm">Add Feedback</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>APP-2026-0003</strong></td>
+              <td><a href="candidate-details.html" style="font-weight:bold; color:#1d4ed8;">Sneha More</a></td>
+              <td>Python Developer Trainee</td>
+              <td>BluePeak Systems</td>
+              <td>2026-10-04</td>
+              <td><span class="badge badge-active">ELIGIBLE</span></td>
+              <td><span class="badge badge-active">INTERVIEWED</span></td>
+              <td>
+                <a href="placement-process.html" class="btn btn-primary btn-sm">Mark Selected</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>APP-2026-0004</strong></td>
+              <td><a href="candidate-details.html" style="font-weight:bold; color:#1d4ed8;">Sneha More</a></td>
+              <td>Junior Data Analyst</td>
+              <td>DataSphere Labs</td>
+              <td>2026-10-05</td>
+              <td><span class="badge badge-active">ELIGIBLE</span></td>
+              <td><span class="badge badge-active">SELECTED</span></td>
+              <td>
+                <a href="placement-process.html" class="btn btn-primary btn-sm">Create Offer</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>APP-2026-0005</strong></td>
+              <td><a href="candidate-details.html" style="font-weight:bold; color:#1d4ed8;">Amit Shinde</a></td>
+              <td>Associate Java Developer</td>
+              <td>TechNova Solutions</td>
+              <td>2026-10-06</td>
+              <td><span class="badge badge-active">ELIGIBLE</span></td>
+              <td><span class="badge badge-active">OFFERED</span></td>
+              <td>
+                <a href="placement-process.html" class="btn btn-primary btn-sm">Confirm Joining</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>APP-2026-0006</strong></td>
+              <td><a href="candidate-details.html" style="font-weight:bold; color:#1d4ed8;">Amit Shinde</a></td>
+              <td>Java Support Engineer</td>
+              <td>NexGen Infotech</td>
+              <td>2026-10-07</td>
+              <td><span class="badge badge-red">NOT_ELIGIBLE</span></td>
+              <td><span class="badge badge-red">REJECTED</span></td>
+              <td><span style="color:#64748b; font-size:12px;">Failed Backlogs Criteria</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

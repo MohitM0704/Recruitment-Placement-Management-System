@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Placement Process – RPMS</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="shell">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <div class="logo-icon">R</div>
+      <div class="sys-title">RECRUITMENT &amp; PLACEMENT MANAGEMENT SYSTEM<small>RPMS v2.0</small></div>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-avatar">AK</div>
+        <div>
+          <div class="user-name">Amit Kulkarni</div>
+          <div class="user-role">Recruiter</div>
+        </div>
+      </div>
+      <a href="login.html" class="logout-link">&#x2715; Logout</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="dashboard.html"><span class="nav-icon">&#127968;</span><span class="nav-text">Dashboard</span></a></li>
+          <li><a href="candidates.html"><span class="nav-icon">&#128100;</span><span class="nav-text">Candidates</span></a></li>
+          <li><a href="companies.html"><span class="nav-icon">&#127970;</span><span class="nav-text">Companies</span></a></li>
+          <li><a href="jobs.html"><span class="nav-icon">&#128188;</span><span class="nav-text">Jobs</span></a></li>
+          <li><a href="applications.html"><span class="nav-icon">&#128203;</span><span class="nav-text">Applications</span></a></li>
+          <li><a href="interviews.html"><span class="nav-icon">&#128172;</span><span class="nav-text">Interviews</span></a></li>
+          <li><a href="placement-process.html" class="active"><span class="nav-icon">&#127941;</span><span class="nav-text">Placement Process</span></a></li>
+          <li><a href="reports.html"><span class="nav-icon">&#128202;</span><span class="nav-text">Reports</span></a></li>
+          <hr class="sidebar-divider"/>
+          <li><a href="login.html"><span class="nav-icon">&#128275;</span><span class="nav-text">Logout</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="sep">/</span>
+        <span>Placement Process</span>
+      </div>
+
+      <div class="page-header">
+        <h1>&#127941; Post-Interview &amp; Placement Workflow</h1>
+      </div>
+
+      <!-- WORKFLOW TABS (Static Prototype Demonstration) -->
+      <div class="card" style="margin-bottom: 20px;">
+        <div style="display: flex; gap: 8px; border-bottom: 2px solid #e2e8f0; padding: 12px 20px 0;">
+          <button class="btn btn-primary btn-sm" style="border-radius: 4px 4px 0 0;">Step 1: Interview Feedback</button>
+          <button class="btn btn-secondary btn-sm" style="border-radius: 4px 4px 0 0;">Step 2: Generate Offer</button>
+          <button class="btn btn-secondary btn-sm" style="border-radius: 4px 4px 0 0;">Step 3: Confirm Joining / Placement</button>
+        </div>
+
+        <div style="padding: 24px;">
+          <h2 style="font-size: 16px; color: #1e3a8a; margin-top: 0;">Step 1: Record Round Feedback &amp; Decision</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Interview Round</label>
+              <select class="form-control">
+                <option>INT-1003: Neha Jadhav &ndash; BluePeak Systems (Managerial)</option>
+                <option>INT-1004: Pooja Mali &ndash; DataSphere Labs (Technical)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Technical Rating (0-5)</label>
+              <input type="number" step="0.5" class="form-control" value="4.5" min="0" max="5"/>
+            </div>
+            <div class="form-group">
+              <label>Communication (0-5)</label>
+              <input type="number" step="0.5" class="form-control" value="4.0" min="0" max="5"/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Problem Solving (0-5)</label>
+              <input type="number" step="0.5" class="form-control" value="4.5" min="0" max="5"/>
+            </div>
+            <div class="form-group">
+              <label>Overall Score (0-5)</label>
+              <input type="number" step="0.5" class="form-control" value="4.3" min="0" max="5"/>
+            </div>
+            <div class="form-group">
+              <label>Final Recommendation <span style="color:red;">*</span></label>
+              <select class="form-control">
+                <option selected>SELECTED</option>
+                <option>NEXT_ROUND</option>
+                <option>REJECTED</option>
+                <option>ON_HOLD</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Interviewer Feedback &amp; Notes</label>
+            <textarea class="form-control" rows="2">Strong core Python knowledge, excellent problem-solving, recommend immediate offer.</textarea>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-sm" onclick="alert('Feedback saved! Application status updated to SELECTED.');">Save Round Feedback</button>
+
+          <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;"/>
+
+          <h2 style="font-size: 16px; color: #1e3a8a;">Step 2: Generate Formal Offer Letter</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Designation / Role Title <span style="color:red;">*</span></label>
+              <input type="text" class="form-control" value="Python Developer Trainee"/>
+            </div>
+            <div class="form-group">
+              <label>Offered Annual CTC (LPA) <span style="color:red;">*</span></label>
+              <input type="number" step="0.1" class="form-control" value="5.2"/>
+            </div>
+            <div class="form-group">
+              <label>Offer Date <span style="color:red;">*</span></label>
+              <input type="date" class="form-control" value="2026-11-20"/>
+            </div>
+            <div class="form-group">
+              <label>Expected Joining Date</label>
+              <input type="date" class="form-control" value="2026-12-15"/>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm" onclick="alert('Offer created! Status set to OFFERED.');">Generate Offer</button>
+
+          <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;"/>
+
+          <h2 style="font-size: 16px; color: #1e3a8a;">Step 3: Confirm Joining &amp; Mark Placed</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Offer Reference</label>
+              <select class="form-control">
+                <option>OFFER-101: Neha Jadhav &ndash; BluePeak Systems @ 5.2 LPA</option>
+                <option>OFFER-102: Sneha More &ndash; DataSphere Labs @ 4.8 LPA</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Actual Joining Date <span style="color:red;">*</span></label>
+              <input type="date" class="form-control" value="2026-12-01"/>
+            </div>
+            <div class="form-group">
+              <label>Joining Status <span style="color:red;">*</span></label>
+              <select class="form-control">
+                <option selected>JOINED</option>
+                <option>NOT_JOINED</option>
+                <option>DEFERRED</option>
+                <option>NO_SHOW</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm" onclick="alert('Joining confirmed! Candidate marked PLACED and offer marked ACCEPTED.');">Confirm Placement</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candidate 360 View – RPMS</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="shell">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <div class="logo-icon">R</div>
+      <div class="sys-title">RECRUITMENT &amp; PLACEMENT MANAGEMENT SYSTEM<small>RPMS v2.0</small></div>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-avatar">AK</div>
+        <div>
+          <div class="user-name">Amit Kulkarni</div>
+          <div class="user-role">Recruiter</div>
+        </div>
+      </div>
+      <a href="login.html" class="logout-link">&#x2715; Logout</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="dashboard.html"><span class="nav-icon">&#127968;</span><span class="nav-text">Dashboard</span></a></li>
+          <li><a href="candidates.html" class="active"><span class="nav-icon">&#128100;</span><span class="nav-text">Candidates</span></a></li>
+          <li><a href="companies.html"><span class="nav-icon">&#127970;</span><span class="nav-text">Companies</span></a></li>
+          <li><a href="jobs.html"><span class="nav-icon">&#128188;</span><span class="nav-text">Jobs</span></a></li>
+          <li><a href="applications.html"><span class="nav-icon">&#128203;</span><span class="nav-text">Applications</span></a></li>
+          <li><a href="interviews.html"><span class="nav-icon">&#128172;</span><span class="nav-text">Interviews</span></a></li>
+          <li><a href="placement-process.html"><span class="nav-icon">&#127941;</span><span class="nav-text">Placement Process</span></a></li>
+          <li><a href="reports.html"><span class="nav-icon">&#128202;</span><span class="nav-text">Reports</span></a></li>
+          <hr class="sidebar-divider"/>
+          <li><a href="login.html"><span class="nav-icon">&#128275;</span><span class="nav-text">Logout</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="sep">/</span>
+        <a href="candidates.html">Candidates</a>
+        <span class="sep">/</span>
+        <span>Candidate 360&deg; View</span>
+      </div>
+
+      <!-- CANDIDATE SUMMARY BANNER -->
+      <div class="card" style="margin-bottom: 20px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+          <div>
+            <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">CAN-2026-0001</span>
+            <h1 style="color: white; margin: 8px 0 4px; font-size: 24px;">Rahul Patil</h1>
+            <p style="margin: 0; opacity: 0.9; font-size: 14px;">rahul.patil01@example.com | +91 9000000001 | Primary: Java | BE (2025) | 68.5%</p>
+          </div>
+          <div style="text-align: right;">
+            <span class="badge badge-active" style="font-size: 13px; padding: 6px 14px;">PROFILE: ACTIVE</span>
+            <div style="margin-top: 8px;"><span class="badge badge-orange" style="font-size: 13px; padding: 6px 14px;">PLACEMENT: NOT_PLACED</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+        <!-- ACADEMIC & PERSONAL -->
+        <div class="card">
+          <div class="card-header"><span class="card-title">Personal &amp; Academic Details</span></div>
+          <table class="table">
+            <tbody>
+              <tr><td style="width: 35%; color: #64748b; font-weight: 500;">Qualification</td><td>BE (Computer Engineering)</td></tr>
+              <tr><td style="color: #64748b; font-weight: 500;">College</td><td>ABC College Pune (SPPU)</td></tr>
+              <tr><td style="color: #64748b; font-weight: 500;">Passing Year</td><td>2025</td></tr>
+              <tr><td style="color: #64748b; font-weight: 500;">Percentage</td><td>68.5% (0 Active Backlogs)</td></tr>
+              <tr><td style="color: #64748b; font-weight: 500;">Current City</td><td>Pune, Maharashtra</td></tr>
+              <tr><td style="color: #64748b; font-weight: 500;">Preferred Job City</td><td>Pune, Bengaluru</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SKILLS & PROFICIENCY -->
+        <div class="card">
+          <div class="card-header"><span class="card-title">Verified Skills &amp; Proficiencies</span></div>
+          <table class="table">
+            <thead>
+              <tr><th>Skill</th><th>Category</th><th>Level</th><th>Primary</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Java</strong></td><td>Programming</td><td><span class="badge badge-blue">INTERMEDIATE</span></td><td>&#10004; Primary</td></tr>
+              <tr><td><strong>SQL / MySQL</strong></td><td>Database</td><td><span class="badge badge-blue">INTERMEDIATE</span></td><td>&ndash;</td></tr>
+              <tr><td><strong>JDBC</strong></td><td>Connectivity</td><td><span class="badge badge-blue">BASIC</span></td><td>&ndash;</td></tr>
+              <tr><td><strong>HTML / CSS</strong></td><td>Web</td><td><span class="badge badge-blue">BASIC</span></td><td>&ndash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- APPLICATIONS HISTORY -->
+      <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header"><span class="card-title">Application History (2 Applications)</span></div>
+        <table class="table">
+          <thead>
+            <tr><th>App Code</th><th>Job Title</th><th>Company</th><th>Applied Date</th><th>Eligibility</th><th>Status</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>APP-2026-0001</strong></td>
+              <td>Associate Java Developer</td>
+              <td>TechNova Solutions</td>
+              <td>2026-10-02</td>
+              <td><span class="badge badge-active">ELIGIBLE</span></td>
+              <td><span class="badge badge-blue">SHORTLISTED</span></td>
+              <td><a href="applications.html" class="btn btn-secondary btn-sm">View Pipeline</a></td>
+            </tr>
+            <tr>
+              <td><strong>APP-2026-0002</strong></td>
+              <td>SQL Developer Trainee</td>
+              <td>TechNova Solutions</td>
+              <td>2026-10-03</td>
+              <td><span class="badge badge-active">ELIGIBLE</span></td>
+              <td><span class="badge badge-blue">INTERVIEW_SCHEDULED</span></td>
+              <td><a href="interviews.html" class="btn btn-secondary btn-sm">View Schedule</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- INTERVIEW HISTORY -->
+      <div class="card">
+        <div class="card-header"><span class="card-title">Interview &amp; Feedback History</span></div>
+        <table class="table">
+          <thead>
+            <tr><th>Interview ID</th><th>Company</th><th>Round</th><th>Date &amp; Mode</th><th>Status</th><th>Overall Rating</th><th>Recommendation</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>INT-1001</td>
+              <td>TechNova Solutions</td>
+              <td>Round 1 (Technical)</td>
+              <td>2026-10-25 | ONLINE</td>
+              <td><span class="badge badge-active">COMPLETED</span></td>
+              <td>4.2 / 5.0</td>
+              <td><span class="badge badge-active">NEXT_ROUND</span></td>
+            </tr>
+            <tr>
+              <td>INT-1002</td>
+              <td>TechNova Solutions</td>
+              <td>Round 2 (Managerial)</td>
+              <td>2026-11-05 | ONLINE</td>
+              <td><span class="badge badge-blue">SCHEDULED</span></td>
+              <td>Pending</td>
+              <td>Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create / Edit Job – RPMS</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="shell">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <div class="logo-icon">R</div>
+      <div class="sys-title">RECRUITMENT &amp; PLACEMENT MANAGEMENT SYSTEM<small>RPMS v2.0</small></div>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-avatar">AK</div>
+        <div>
+          <div class="user-name">Amit Kulkarni</div>
+          <div class="user-role">Recruiter</div>
+        </div>
+      </div>
+      <a href="login.html" class="logout-link">&#x2715; Logout</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="dashboard.html"><span class="nav-icon">&#127968;</span><span class="nav-text">Dashboard</span></a></li>
+          <li><a href="candidates.html"><span class="nav-icon">&#128100;</span><span class="nav-text">Candidates</span></a></li>
+          <li><a href="companies.html"><span class="nav-icon">&#127970;</span><span class="nav-text">Companies</span></a></li>
+          <li><a href="jobs.html" class="active"><span class="nav-icon">&#128188;</span><span class="nav-text">Jobs</span></a></li>
+          <li><a href="applications.html"><span class="nav-icon">&#128203;</span><span class="nav-text">Applications</span></a></li>
+          <li><a href="interviews.html"><span class="nav-icon">&#128172;</span><span class="nav-text">Interviews</span></a></li>
+          <li><a href="placement-process.html"><span class="nav-icon">&#127941;</span><span class="nav-text">Placement Process</span></a></li>
+          <li><a href="reports.html"><span class="nav-icon">&#128202;</span><span class="nav-text">Reports</span></a></li>
+          <hr class="sidebar-divider"/>
+          <li><a href="login.html"><span class="nav-icon">&#128275;</span><span class="nav-text">Logout</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="sep">/</span>
+        <a href="jobs.html">Jobs</a>
+        <span class="sep">/</span>
+        <span>Create / Edit Job</span>
+      </div>
+
+      <div class="page-header">
+        <h1>&#128188; Job Opening &amp; Eligibility Setup</h1>
+        <div class="page-actions">
+          <a href="jobs.html" class="btn btn-secondary btn-sm">&larr; Back to Jobs</a>
+        </div>
+      </div>
+
+      <div class="card" style="max-width: 900px;">
+        <div class="card-header"><span class="card-title">Job Profile &amp; Automated Cutoff Criteria</span></div>
+
+        <form style="padding: 24px;">
+          <h3 style="font-size: 15px; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 16px;">1. Basic Job Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Hiring Company <span style="color:red;">*</span></label>
+              <select class="form-control" required>
+                <option selected>TechNova Solutions (COM-001)</option>
+                <option>BluePeak Systems (COM-002)</option>
+                <option>DataSphere Labs (COM-003)</option>
+                <option>QualityFirst Tech (COM-004)</option>
+                <option>CloudBridge India (COM-005)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Job Code <span style="color:red;">*</span></label>
+              <input type="text" class="form-control" value="JOB-2026-001" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Position Title <span style="color:red;">*</span></label>
+              <input type="text" class="form-control" value="Associate Java Developer" required/>
+            </div>
+            <div class="form-group">
+              <label>Employment Type <span style="color:red;">*</span></label>
+              <select class="form-control">
+                <option selected>FULL_TIME</option>
+                <option>INTERNSHIP</option>
+                <option>CONTRACT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Location <span style="color:red;">*</span></label>
+              <input type="text" class="form-control" value="Pune" required/>
+            </div>
+            <div class="form-group">
+              <label>Vacancies (Openings) <span style="color:red;">*</span></label>
+              <input type="number" class="form-control" value="8" min="1" required/>
+            </div>
+          </div>
+
+          <h3 style="font-size: 15px; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin: 24px 0 16px;">2. Compensation Package (LPA)</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Minimum Package (LPA)</label>
+              <input type="number" step="0.1" class="form-control" value="4.0"/>
+            </div>
+            <div class="form-group">
+              <label>Maximum Package (LPA)</label>
+              <input type="number" step="0.1" class="form-control" value="5.5"/>
+            </div>
+          </div>
+
+          <h3 style="font-size: 15px; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin: 24px 0 16px;">3. Candidate Eligibility Rules (Auto-checked upon application)</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Eligible Qualifications</label>
+              <input type="text" class="form-control" value="BE, BTech, MCA"/>
+            </div>
+            <div class="form-group">
+              <label>Minimum Percentage Cutoff <span style="color:red;">*</span></label>
+              <input type="number" class="form-control" value="60" min="0" max="100" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Earliest Passing Year Allowed</label>
+              <input type="number" class="form-control" value="2024"/>
+            </div>
+            <div class="form-group">
+              <label>Latest Passing Year Allowed</label>
+              <input type="number" class="form-control" value="2026"/>
+            </div>
+            <div class="form-group">
+              <label>Maximum Allowed Backlogs <span style="color:red;">*</span></label>
+              <input type="number" class="form-control" value="0" min="0" required/>
+            </div>
+          </div>
+
+          <h3 style="font-size: 15px; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin: 24px 0 16px;">4. Schedule &amp; Status</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Posted Date <span style="color:red;">*</span></label>
+              <input type="date" class="form-control" value="2026-10-01" required/>
+            </div>
+            <div class="form-group">
+              <label>Application Deadline <span style="color:red;">*</span></label>
+              <input type="date" class="form-control" value="2026-11-15" required/>
+            </div>
+            <div class="form-group">
+              <label>Status <span style="color:red;">*</span></label>
+              <select class="form-control">
+                <option selected>OPEN</option>
+                <option>CLOSED</option>
+                <option>DRAFT</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display: flex; gap: 12px;">
+            <button type="button" class="btn btn-primary" onclick="alert('Job saved (prototype)!'); window.location.href='jobs.html';">Save Job Opening</button>
+            <a href="jobs.html" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

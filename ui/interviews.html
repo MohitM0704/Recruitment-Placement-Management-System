@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interviews & Scheduling – RPMS</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="shell">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <div class="logo-icon">R</div>
+      <div class="sys-title">RECRUITMENT &amp; PLACEMENT MANAGEMENT SYSTEM<small>RPMS v2.0</small></div>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-avatar">AK</div>
+        <div>
+          <div class="user-name">Amit Kulkarni</div>
+          <div class="user-role">Recruiter</div>
+        </div>
+      </div>
+      <a href="login.html" class="logout-link">&#x2715; Logout</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="dashboard.html"><span class="nav-icon">&#127968;</span><span class="nav-text">Dashboard</span></a></li>
+          <li><a href="candidates.html"><span class="nav-icon">&#128100;</span><span class="nav-text">Candidates</span></a></li>
+          <li><a href="companies.html"><span class="nav-icon">&#127970;</span><span class="nav-text">Companies</span></a></li>
+          <li><a href="jobs.html"><span class="nav-icon">&#128188;</span><span class="nav-text">Jobs</span></a></li>
+          <li><a href="applications.html"><span class="nav-icon">&#128203;</span><span class="nav-text">Applications</span></a></li>
+          <li><a href="interviews.html" class="active"><span class="nav-icon">&#128172;</span><span class="nav-text">Interviews</span></a></li>
+          <li><a href="placement-process.html"><span class="nav-icon">&#127941;</span><span class="nav-text">Placement Process</span></a></li>
+          <li><a href="reports.html"><span class="nav-icon">&#128202;</span><span class="nav-text">Reports</span></a></li>
+          <hr class="sidebar-divider"/>
+          <li><a href="login.html"><span class="nav-icon">&#128275;</span><span class="nav-text">Logout</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="sep">/</span>
+        <span>Interviews</span>
+      </div>
+
+      <div class="page-header">
+        <h1>&#128172; Interview Rounds &amp; Scheduling</h1>
+      </div>
+
+      <!-- SCHEDULE NEW ROUND -->
+      <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header"><span class="card-title">Schedule New Interview Round</span></div>
+        <form style="padding: 20px;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Candidate Application</label>
+              <select class="form-control">
+                <option>APP-2026-0001: Rahul Patil &rarr; TechNova Solutions (Java)</option>
+                <option>APP-2026-0007: Neha Jadhav &rarr; BluePeak Systems (Python)</option>
+                <option>APP-2026-0010: Rohit Pawar &rarr; NexGen Infotech</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Round Number</label>
+              <select class="form-control">
+                <option>Round 1</option>
+                <option>Round 2</option>
+                <option>Round 3</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Round Type</label>
+              <select class="form-control">
+                <option>TECHNICAL</option>
+                <option>APTITUDE</option>
+                <option>MANAGERIAL</option>
+                <option>HR</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date</label>
+              <input type="date" class="form-control" value="2026-11-20"/>
+            </div>
+            <div class="form-group">
+              <label>Time</label>
+              <input type="time" class="form-control" value="11:00"/>
+            </div>
+            <div class="form-group">
+              <label>Mode</label>
+              <select class="form-control">
+                <option>ONLINE (Google Meet / Teams)</option>
+                <option>OFFLINE (Campus / Company Office)</option>
+                <option>TELEPHONIC</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Interviewer Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Anand Sharma"/>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm" onclick="alert('Interview round scheduled (prototype)!');">Schedule Interview</button>
+        </form>
+      </div>
+
+      <!-- INTERVIEWS TABLE -->
+      <div class="card">
+        <div class="card-header"><span class="card-title">Scheduled &amp; Conducted Interview Rounds</span></div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Interview ID</th>
+              <th>Candidate</th>
+              <th>Company</th>
+              <th>Round</th>
+              <th>Type</th>
+              <th>Scheduled Time</th>
+              <th>Mode</th>
+              <th>Interviewer</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>INT-1001</td>
+              <td><strong>Rahul Patil</strong></td>
+              <td>TechNova Solutions</td>
+              <td>Round 1</td>
+              <td>TECHNICAL</td>
+              <td>2026-10-25 10:30 AM</td>
+              <td>ONLINE</td>
+              <td>Anand Sharma</td>
+              <td><span class="badge badge-active">COMPLETED</span></td>
+              <td><a href="placement-process.html" class="btn btn-secondary btn-sm">View Feedback</a></td>
+            </tr>
+            <tr>
+              <td>INT-1002</td>
+              <td><strong>Sneha More</strong></td>
+              <td>BluePeak Systems</td>
+              <td>Round 1</td>
+              <td>TECHNICAL</td>
+              <td>2026-10-26 11:30 AM</td>
+              <td>ONLINE</td>
+              <td>Karan Verma</td>
+              <td><span class="badge badge-active">COMPLETED</span></td>
+              <td><a href="placement-process.html" class="btn btn-secondary btn-sm">View Feedback</a></td>
+            </tr>
+            <tr>
+              <td>INT-1003</td>
+              <td><strong>Neha Jadhav</strong></td>
+              <td>BluePeak Systems</td>
+              <td>Round 2</td>
+              <td>MANAGERIAL</td>
+              <td>2026-11-21 02:00 PM</td>
+              <td>ONLINE</td>
+              <td>Sunil Rao</td>
+              <td><span class="badge badge-blue">SCHEDULED</span></td>
+              <td><a href="placement-process.html" class="btn btn-primary btn-sm">Add Feedback</a></td>
+            </tr>
+            <tr>
+              <td>INT-1004</td>
+              <td><strong>Pooja Mali</strong></td>
+              <td>DataSphere Labs</td>
+              <td>Round 1</td>
+              <td>TECHNICAL</td>
+              <td>2026-11-22 03:30 PM</td>
+              <td>ONLINE</td>
+              <td>Pooja Hegde</td>
+              <td><span class="badge badge-blue">SCHEDULED</span></td>
+              <td><a href="placement-process.html" class="btn btn-primary btn-sm">Add Feedback</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

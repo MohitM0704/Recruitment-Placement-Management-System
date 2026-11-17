@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hiring Companies – RPMS</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="shell">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <div class="logo-icon">R</div>
+      <div class="sys-title">RECRUITMENT &amp; PLACEMENT MANAGEMENT SYSTEM<small>RPMS v2.0</small></div>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-avatar">AK</div>
+        <div>
+          <div class="user-name">Amit Kulkarni</div>
+          <div class="user-role">Recruiter</div>
+        </div>
+      </div>
+      <a href="login.html" class="logout-link">&#x2715; Logout</a>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="dashboard.html"><span class="nav-icon">&#127968;</span><span class="nav-text">Dashboard</span></a></li>
+          <li><a href="candidates.html"><span class="nav-icon">&#128100;</span><span class="nav-text">Candidates</span></a></li>
+          <li><a href="companies.html" class="active"><span class="nav-icon">&#127970;</span><span class="nav-text">Companies</span></a></li>
+          <li><a href="jobs.html"><span class="nav-icon">&#128188;</span><span class="nav-text">Jobs</span></a></li>
+          <li><a href="applications.html"><span class="nav-icon">&#128203;</span><span class="nav-text">Applications</span></a></li>
+          <li><a href="interviews.html"><span class="nav-icon">&#128172;</span><span class="nav-text">Interviews</span></a></li>
+          <li><a href="placement-process.html"><span class="nav-icon">&#127941;</span><span class="nav-text">Placement Process</span></a></li>
+          <li><a href="reports.html"><span class="nav-icon">&#128202;</span><span class="nav-text">Reports</span></a></li>
+          <hr class="sidebar-divider"/>
+          <li><a href="login.html"><span class="nav-icon">&#128275;</span><span class="nav-text">Logout</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="sep">/</span>
+        <span>Companies</span>
+      </div>
+
+      <div class="page-header">
+        <h1>&#127970; Hiring Companies Master</h1>
+        <div class="page-actions">
+          <button class="btn btn-primary btn-sm" onclick="alert('Open Add Company Modal (Prototype)');">+ Add Company</button>
+        </div>
+      </div>
+
+      <!-- FILTER PANEL -->
+      <div class="card filter-panel">
+        <div class="filter-grid">
+          <div class="form-group">
+            <label>Search Company Name</label>
+            <input type="text" class="form-control" placeholder="e.g. TechNova or BluePeak"/>
+          </div>
+          <div class="form-group">
+            <label>Industry</label>
+            <select class="form-control">
+              <option value="">All Industries</option>
+              <option>IT Services</option>
+              <option>Software</option>
+              <option>Analytics</option>
+              <option>FinTech</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <select class="form-control">
+              <option value="">All Locations</option>
+              <option>Pune</option>
+              <option>Bengaluru</option>
+              <option>Mumbai</option>
+              <option>Hyderabad</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select class="form-control">
+              <option value="">All</option>
+              <option>ACTIVE</option>
+              <option>INACTIVE</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:12px; display:flex; gap:10px;">
+          <button class="btn btn-primary btn-sm">Search</button>
+          <button class="btn btn-secondary btn-sm">Reset</button>
+        </div>
+      </div>
+
+      <!-- COMPANIES TABLE -->
+      <div class="card">
+        <div class="card-header"><span class="card-title">Registered Hiring Organizations (8 Companies)</span></div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Company Code</th>
+              <th>Company Name</th>
+              <th>Industry</th>
+              <th>Type</th>
+              <th>Location</th>
+              <th>HR Contact</th>
+              <th>HR Email</th>
+              <th>Status</th>
+              <th>Active Jobs</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>COM-001</strong></td>
+              <td>TechNova Solutions</td>
+              <td>IT Services</td>
+              <td>MID_SIZE</td>
+              <td>Pune</td>
+              <td>Meera Shah</td>
+              <td>meera.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><a href="jobs.html" style="font-weight:bold; color:#1d4ed8;">2 Jobs</a></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+            <tr>
+              <td><strong>COM-002</strong></td>
+              <td>BluePeak Systems</td>
+              <td>Software</td>
+              <td>MNC</td>
+              <td>Bengaluru</td>
+              <td>Rakesh Nair</td>
+              <td>rakesh.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><a href="jobs.html" style="font-weight:bold; color:#1d4ed8;">1 Job</a></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+            <tr>
+              <td><strong>COM-003</strong></td>
+              <td>DataSphere Labs</td>
+              <td>Analytics</td>
+              <td>STARTUP</td>
+              <td>Pune</td>
+              <td>Anita Rao</td>
+              <td>anita.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><a href="jobs.html" style="font-weight:bold; color:#1d4ed8;">2 Jobs</a></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+            <tr>
+              <td><strong>COM-004</strong></td>
+              <td>QualityFirst Tech</td>
+              <td>Testing</td>
+              <td>MID_SIZE</td>
+              <td>Mumbai</td>
+              <td>Kavita Mehta</td>
+              <td>kavita.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><a href="jobs.html" style="font-weight:bold; color:#1d4ed8;">2 Jobs</a></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+            <tr>
+              <td><strong>COM-005</strong></td>
+              <td>CloudBridge India</td>
+              <td>Cloud &amp; Software</td>
+              <td>MNC</td>
+              <td>Hyderabad</td>
+              <td>Arun Das</td>
+              <td>arun.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><a href="jobs.html" style="font-weight:bold; color:#1d4ed8;">1 Job</a></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+            <tr>
+              <td><strong>COM-006</strong></td>
+              <td>NexGen Infotech</td>
+              <td>IT Services</td>
+              <td>CONSULTANCY</td>
+              <td>Pune</td>
+              <td>Priyanka Sen</td>
+              <td>priyanka.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><a href="jobs.html" style="font-weight:bold; color:#1d4ed8;">2 Jobs</a></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+            <tr>
+              <td><strong>COM-007</strong></td>
+              <td>FinEdge Technologies</td>
+              <td>FinTech</td>
+              <td>MNC</td>
+              <td>Mumbai</td>
+              <td>Harish Jain</td>
+              <td>harish.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><span style="color:#64748b;">0 (Closed)</span></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+            <tr>
+              <td><strong>COM-008</strong></td>
+              <td>RetailIQ Labs</td>
+              <td>Retail Analytics</td>
+              <td>STARTUP</td>
+              <td>Chennai</td>
+              <td>Divya Krishnan</td>
+              <td>divya.hr@example.com</td>
+              <td><span class="badge badge-active">ACTIVE</span></td>
+              <td><a href="jobs.html" style="font-weight:bold; color:#1d4ed8;">1 Job</a></td>
+              <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
